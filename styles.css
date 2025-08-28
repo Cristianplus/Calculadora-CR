@@ -1,38 +1,85 @@
 /* Reset y fuente */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* { /* estilos para la pagina general "*" selector universal*/
+    box-sizing: border-box; /* tamaño del elemento: contenido + padding + borde */
+    margin: 0; /* elimina los márgenes externos de todos los elementos*/
+    padding: 0; /* elimina el relleno interno de todos los elementos*/
 }
 
 body {
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    background: linear-gradient(135deg, #f6f7fb, #e9eef5);
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh; /* altura mínima de la ventana visible del navegador */
+    display: grid; /* convierte el body en un contenedor de cuadricula (grid)*/
+    place-content: center; /* centra el contenido del grid tanto horizontal como verticalmente */
+    background: linear-gradient(135deg, #c7f8fa, #000000); /* fondo con degradado lineal de forma diagonal*/
+    font-family: Arial, Helvetica, sans-serif; /* establece la fuente del texto*/
 }
 
 /* Caja Principal */
 .calculadora {
-    width: min(360px, 90vw);
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
-    padding: 16px;
+    width: min(360px, 90vw); /* ancho máximo de 360px o 90% del ancho de la ventana*/
+    background: black; /* fondo negro*/
+    border-radius: 16px; /* bordes redondeados con un radio de 16px*/
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .45); /* sombra alrededor de la caja*/
+    padding: 16px; /* espacio interno entre el borde del contenedor y su contenido de 16px*/
 }
 
 /* Pantalla */
 
 .display { 
-    background: #1d1f27;
-    color: white;
-    border-radius: 12px;
-    padding: 14px;
-    text-align: right;
-    min-height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between
+    background: #080808; /* fondo oscuro*/
+    color: white; /* color del texto blanco*/
+    border-radius: 12px; /* bordes redondeados con un radio de 12px*/
+    padding: 14px; /* espacio interno de 14px*/
+    text-align: right; /* alinea el texto a la derecha*/
+    min-height: 90px; /* altura mínima de 90px*/
+    display: flex; /* convierte el contenedor en un contenedor flexible (flexbox)*/
+    flex-direction: column; /* organiza los elementos hijos en columnas / utiliza (row) para filas*/
+    justify-content: space-between /* distribuye el espacio entre los elementos hijos*/
+}
+
+.display .prev {
+    opacity: 0.6; /* opacidad del 60% para el texto anterior*/
+    font-size: 0.9rem; /* tamaño de fuente de 0.9 rem (unidad relativa a la fuente raíz (html))*/
+    min-height: 1.1em; /* altura mínima de 1.1 veces la altura de la fuente actual*/
+}
+
+.display .curr {
+    font-size: 2.2rem; /* tamaño de fuente de 2.2 rem (unidad relativa a la fuente raíz (html))*/
+    font-weight: bold; /* texto en negrita*/;
+}
+
+/* Botonera */
+.botones {
+    margin-top: 12px; /* margen superior de 12px*/
+    display: grid; /* convierte el contenedor en una cuadrícula (grid)*/
+    grid-template-columns: repeat(4, 1fr); /* define una cuadrícula con 4 columnas de igual tamaño*/;
+    gap: 10px; /* espacio de 10px entre filas y columnas*/
+} 
+
+.btn {
+    border: none;
+    background: #181818; /* fondo claro*/
+    color: white; /* color del texto blanco*/
+    border-radius: 12px; /* bordes redondeados con un radio de 12px*/
+    padding: 16px; /* espacio interno de 16px*/
+    font-size: 1.2rem; /* tamaño de fuente de 1.2 rem (unidad relativa a la fuente raíz (html))*/
+    cursor: pointer; /* cambia el cursor a un puntero al pasar sobre el botón*/
+    transition: background 0.2s, transform 0.1s; /* transición suave para cambios de fondo y transformación*/
+}
+
+.btn:active {
+    transform: scale(0.96); /* reduce el tamaño del botón al 96% cuando se presiona*/
+    background: rgb(57, 57, 57);
+}
+
+.operator {
+    background: #000719; /* fondo azul claro para botones de operadores*/
+    color: rgb(8, 255, 255);;
+}
+
+.equal {
+    background: #4e9496; /* fondo azul para el botón de igual*/
+    color: black; /* color del igual en nrgo */
+    border-radius: 50%; /* botón redondo*/
+    padding: 21px; /* espacio interno de 21px*/
 }
