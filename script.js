@@ -59,7 +59,7 @@ function deleteNumber() {
 
 // Función para punto decimal
 function appendDecimal() {
-    if (!current.includes(".")) return; // si ya hay un punto, no hacer nada
+    if (current.includes(".")) return; // si ya hay un punto, no hacer nada
     if (current === "") current = "0"; // Si el display está vacío, empezar con 0
         current += "."; // Se agrega el punto solo sí no hay otro (!)
         expression = previous && operation ? previous + " " + operation + " " + current : current; // actualizar la expresión visible
